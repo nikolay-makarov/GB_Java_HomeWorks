@@ -4,21 +4,27 @@ import java.util.Scanner;
  * Реализовать простой калькулятор
  */
 public class Task03 {
-    public static double SumOfNumbers(double number1, double number2) {
+
+    public static double sumOfNumbers(double number1, double number2) {
         return number1 + number2;
     }
-    public static double DifferenceOfNumbers(double number1, double number2) {
+
+    public static double differenceOfNumbers(double number1, double number2) {
         return number1 - number2;
     }
-    public static double ProductOfNumbers(double number1, double number2) {
+
+    public static double productOfNumbers(double number1, double number2) {
         return number1 * number2;
     }
-    public static double QuotientOfNumbers(double number1, double number2) {
+
+    public static double quotientOfNumbers(double number1, double number2) {
         return number1 / number2;
     }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         double number1, number2;
+
         System.out.print("Введите первое число: ");
         number1 = scanner.nextDouble();
 
@@ -27,16 +33,27 @@ public class Task03 {
 
         System.out.print("Введите операцию (+-*/): ");
         char operation = scanner.next().charAt(0);
-        double result = 0;
-        if(operation == '+')
-            result = SumOfNumbers(number1, number2);
-        else if (operation == '-')
-            result = DifferenceOfNumbers(number1, number2);
-        else if (operation == '*')
-            result = ProductOfNumbers(number1, number2);
-        else if (operation == '/')
-            result = QuotientOfNumbers(number1, number2);
-        System.out.printf("%.2f %s %.2f = %.2f\n", number1, operation, number2, result);
+
+        double result;
+        if(operation == '+') {
+            result = sumOfNumbers(number1, number2);
+            System.out.printf("%.2f %c %.2f = %.2f\n", number1, operation, number2, result);
+        }
+        else if (operation == '-') {
+            result = differenceOfNumbers(number1, number2);
+            System.out.printf("%.2f %c %.2f = %.2f\n", number1, operation, number2, result);
+        }
+        else if (operation == '*') {
+            result = productOfNumbers(number1, number2);
+            System.out.printf("%.2f %c %.2f = %.2f\n", number1, operation, number2, result);
+        }
+        else if (operation == '/') {
+            result = quotientOfNumbers(number1, number2);
+            System.out.printf("%.2f %c %.2f = %.2f\n", number1, operation, number2, result);
+        }
+        else {
+            System.out.println("Введена неверная операция!");
+        }
         scanner.close();
     }
 }

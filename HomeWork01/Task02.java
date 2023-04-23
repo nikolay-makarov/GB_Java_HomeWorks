@@ -4,7 +4,7 @@ package HomeWorks.HomeWork01;
  */
 public class Task02 {
 
-    public static boolean IsPrime(int number) {
+    public static boolean isPrime(int number) {
         double s = Math.sqrt(number);
         for (int i = 2; i <= s; i++) {
             if (number % i == 0)
@@ -14,8 +14,8 @@ public class Task02 {
     }
 
     public static void main(String[] args) {
-        for (int i = 2; i < 1000; i++){
-            if (IsPrime(i))
+        for (int i = 2; i < 1000; i++) {
+            if (isPrime(i))
                 System.out.println(i);
         }
     }
